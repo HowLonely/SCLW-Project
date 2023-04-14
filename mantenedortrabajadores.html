@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCLW Servicios a la minería</title>
+    <link rel="stylesheet" href="./stylesMantenedores.css">
+</head>
+<body>
+    <form action="" class="form-mantenedor">
+        <h3>Mantenedor de trabajadores</h3>
+        <div class="alinear-divs-form">
+            <label for="nombre">Nombre: </label><input type="text" placeholder="Ingrese nombre del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="apellido">Apellido: </label><input type="text" placeholder="Ingrese apellido del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="rut">Rut: </label><input type="text" placeholder="Ingrese rut del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="telefono">Telefono: </label><input type="number" placeholder="Ingrese telefono del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="cargo">Cargo: </label><input type="text" placeholder="Ingrese cargo del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="faena-actual">Faena Actual: </label><input type="text" placeholder="Ingrese faena del trabajador" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="faena-anterior">Faena Anterior: </label>
+            <select name="faenas" class="inputs-form">
+                <option value="0" selected hidden>-</option>
+                <option value="1">Faena 1</option>
+            </select>
+        </div>
+        <div class="alinear-divs-form">
+            <label for="foto">Fotografía: </label><div class="input-file-div"><input type="text" placeholder="URL" class="input-file-url"><input type="button" value="Examinar" class="input-file-examine"></div>
+        </div>
+        <div id="div-botones">
+            <input type="button" value="Buscar trabajador" id="boton-buscar">
+            <input type="submit" value="Ingresar trabajador">
+        </div>
+    </form>
+    <div>
+        <h2>Faena 1</h2>
+        <table>
+            <tr>
+                <th><h3>Rut</h3></th>
+                <th><h3>Nombre</h3></th>
+                <th><h3>Apellido</h3></th>
+                <th><h3>Cargo</h3></th>
+                <th class="acciones-table"><h3>Acciones</h3></th>
+            </tr>
+            <tr>
+                <td>19231283</td>
+                <td>asdasd</td>
+                <td>asd</td>
+                <td>dsfsdfsfd</td>
+                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+            </tr>
+            <tr>
+                <td>23123123</td>
+                <td>sdvcxvcxv</td>
+                <td>asd</td>
+                <td>sdffds</td>
+                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+            </tr>
+        </table>
+        <h2>Faena 2</h2>
+        <table>
+            <tr>
+                <th><h3>Rut</h3></th>
+                <th><h3>Nombre</h3></th>
+                <th><h3>Apellido</h3></th>
+                <th><h3>Cargo</h3></th>
+                <th class="acciones-table"><h3>Acciones</h3></th>
+            </tr>
+            <tr>
+                <td>19231283</td>
+                <td>asdasd</td>
+                <td>cas</td>
+                <td>sdfsfd</td>
+                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+            </tr>
+            <tr>
+                <td>23123123</td>
+                <td>sdvcxvcxv</td>
+                <td>asd</td>
+                <td>sdfsdf</td>
+                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
