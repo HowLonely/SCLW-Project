@@ -96,6 +96,10 @@ footer * {
   border-bottom: #0f2e4f 3.5px solid;
 }
 
+#home-a{
+  display: flex;
+}
+
 /*Searchbox en el header*/
 .searchbox {
   background-color: inherit;
@@ -380,4 +384,35 @@ footer * {
 
 .footer-logo {
   align-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  header{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .nav *{
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  #home-a{
+    display: block;
+  }
+
+  footer{
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-logo img{
+    width: 50%;
+  }
+
+  .footer-credits{
+    margin-top: 12px;
+  }
 }

@@ -6,8 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCLW Servicios a la minería</title>
     <link rel="stylesheet" href="./stylesMantenedores.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 </head>
 <body>
+    <header>
+        <!-- Acá irá el logo de la empresa junto a información    -->
+        <img src="./assets/SCLW.png" alt="logo" width="190rem" />
+        <!-- Navigator -->
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__items">
+              <a href="./index.html" style="gap: 0.8rem"  id="home-a">
+                <i class="fi fi-ss-home" style="background-color: transparent"></i
+                >Inicio</a
+              >
+            </li>
+            <li class="nav__items">
+              <a href="#"><i class="fi fi-br-edit"></i> Registrar</a>
+            </li>
+            <li class="nav__items"><a href="mantenedores.html"> <i class="fi fi-sr-cube"></i> Mantenedores</a></li>
+            <li class="nav__items"><a href="#"> <i class="fi fi-sr-picture"></i> Galeria</a></li>
+          </ul>
+        </nav>
+        <!-- Formulario de busqueda -->
+        <form action="#" class="searchbox">
+          <i
+            class="fi fi-br-search"
+            style="background-color: transparent; display: flex"
+          ></i>
+          <input
+            type="text"
+            placeholder="Buscar algo..."
+            name="searchbox"
+            id="search" 
+            class="searchbox__input"
+          />
+        </form>
+      </header>
     <form action="" class="form-mantenedor">
         <h3>Mantenedor de EPP</h3>
         <div class="alinear-divs-form">
@@ -48,14 +93,14 @@
                 <td>asdasd</td>
                 <td>Marca1</td>
                 <td>23</td>
-                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+                <td class="centrar"><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
             </tr>
             <tr>
                 <td>23123123</td>
                 <td>sdvcxvcxv</td>
                 <td>Marca2</td>
                 <td>13</td>
-                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+                <td class="centrar"><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
             </tr>
         </table>
         <h2>EPP Cargo 1</h2>
@@ -72,16 +117,29 @@
                 <td>asdasd</td>
                 <td>Marca1</td>
                 <td>23</td>
-                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+                <td class="centrar"><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
             </tr>
             <tr>
                 <td>23123123</td>
                 <td>sdvcxvcxv</td>
                 <td>Marca2</td>
                 <td>13</td>
-                <td><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
+                <td class="centrar"><a href="">👁️</a> <a href="">📝</a> <a href="">❌</a></td>
             </tr>
         </table>
     </div>
+    <footer>
+        <div class="footer-logo">
+          <img src="./assets/SCLW.png" alt="SCLW logo" width="100rem">
+        </div>
+          <div class="footer-contact">
+            <h3>Contacto</h3>
+            <p><i class="fi fi-sr-marker"></i> Av. Los Frutales 1234, La Serena, Chile</p>
+            <p><i class="fi fi-sr-phone-call"></i> +51 123456789</p>
+            <p><i class="fi fi-sr-envelope"></i> info_contacto@sclw.com</p>
+          </div>
+      <div class="footer-credits">
+        <p>&copy; 2023 SCLW. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
