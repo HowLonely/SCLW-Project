@@ -8,6 +8,9 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
 /*
 
 Azul oscuro: #15202B (background)

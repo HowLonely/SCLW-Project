@@ -1,0 +1,22 @@
+/*Estilos globales de index.html*/
+* {
+    background-color: #15202B;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  
+  /*
+  
+  Azul oscuro: #15202B (background)
+  
+  Azul brillante: #22A7F0 (navigator)
+  
+  Verde lima: #7ED321
+  
+  Naranja oscuro: #FFA200
+  
+  Gris claro: #E5E5E5
