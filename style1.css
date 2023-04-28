@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+nav{
+    background-color: #22A7F0;
+    
+}
+
+nav *:link{
+    text-decoration: none;
+    color: #313031;
+}
+
+nav div a img{
+  max-width: 190px;
+}
