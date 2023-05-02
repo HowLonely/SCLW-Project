@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignacion de EPPs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="#" onsubmit="return false" class="form-asignacion">
+        <div class="alinear-divs-form">
+            <label for="trabajador">Trabajador: </label>
+            <select name="trabajador" id="trabajador" onblur="tablaEPPTrabajador()" class="select-form">
+                <option value="" selected hidden>-</option>
+                <option value="Trabajador 1">Trabajador 1</option>
+                <option value="Trabajador 2">Trabajador 2</option>
+            </select>
+        </div>
+        <div class="alinear-divs-form">
+            <label for="epp">EPP: </label>
+            <select name="epp" id="epp" class="select-form">
+                <option value="" selected hidden>-</option>
+                <option value="EPP 1">EPP 1</option>
+                <option value="EPP 2">EPP 2</option>
+            </select>
+        </div>
+        <div class="alinear-divs-form">
+            <label for="motivo">Motivo: </label>
+            <select name="motivo" id="motivo" class="select-form">
+                <option value="" selected hidden>-</option>
+                <option value="Motivo 1">Motivo 1</option>
+                <option value="Motivo 2">Motivo 2</option>
+            </select>
+        </div>
+        <div id="div-botones">
+            <input type="submit" onclick="asignarEPPTrabajador()" value="Asignar EPP">
+        </div>
+    </form>
+    <div id="tablaEPPsTrabajador">
+        <h2>EPPs del trabajador <span id="nombreTrabajador"></span></h2>
+        <table>
+            <tr>
+                <th><h3>Codigo</h3></th>
+                <th><h3>Nombre</h3></th>
+                <th><h3>Marca</h3></th>
+            </tr>
+            <tr>
+                <td>19231283</td>
+                <td>asdasd</td>
+                <td>Marca1</td>
+                <td onclick="eliminarEPP()" class="centrar"><a href="">❌</a></td>
+            </tr>
+            <tr>
+                <td>23123123</td>
+                <td>sdvcxvcxv</td>
+                <td>Marca2</td>
+                <td onclick="eliminarEPP()" class="centrar"><a href="">❌</a></td>
+            </tr>
+            <tr id="tablaEPP"></tr>
+        </table>
+        <div>
+            <h2>Asignaciones</h2>
+            <div id="asignacionesEPPsTrabajador"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
