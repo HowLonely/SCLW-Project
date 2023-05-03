@@ -156,7 +156,7 @@ a{
 }
 
 .inputs-form{
-    width: 74%;
+    width: 80%;
     background-color: #15202B;
     color: white;
     border: 1px solid #E5E5E5;
@@ -165,14 +165,14 @@ a{
 .select-form{
     padding: 8px 12px;
     border-radius: 8px;
-    width: 77.3%;
+    width: 80%;
     background-color: #15202B;
     color: white;
     border: 1px solid #E5E5E5;
 }
 
 .input-file-div{
-    width: 77.4%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     margin: 0px;
