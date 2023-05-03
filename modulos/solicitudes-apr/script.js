@@ -1,31 +1,43 @@
+function aprobado(id) {
+    res = confirm("¿Desea aprobar esta solicitud?");
+    if (res) {
+        respuesta = document.getElementById(id);
+        respuesta.innerHTML = '<span class="badge rounded-pill text-bg-success">Aprobado</span>';
+        alert("Se ha aprobado la solicitud");
+    }
+}
+
+function rechazado(id) {
+    res = confirm("¿Desea rechazar esta solicitud?");
+    if (res) {
+        res = document.getElementById(id);
+        res.innerHTML = '<span class="badge rounded-pill text-bg-danger">Rechazado</span>';
+        alert("Se ha rechazado la solicitud");
+    }
+}
+
 function aprobado1() {
-    res = document.getElementById('respuesta1');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-success">Aprobado</span>';
+    aprobado('respuesta1');
 }
 
 function rechazado1() {
-    res = document.getElementById('respuesta1');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-danger">Rechazado</span>';
+    rechazado('respuesta1');
 }
 
 function aprobado2() {
-    res = document.getElementById('respuesta2');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-success">Aprobado</span>';
+    aprobado('respuesta2');
 }
 
 function rechazado2() {
-    res = document.getElementById('respuesta2');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-danger">Rechazado</span>';
+    rechazado('respuesta2');
 }
 
 function aprobado3() {
-    res = document.getElementById('respuesta3');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-success">Aprobado</span>';
+    aprobado('respuesta3');
 }
 
 function rechazado3() {
-    res = document.getElementById('respuesta3');
-    res.innerHTML = '<span class="badge rounded-pill text-bg-danger">Rechazado</span>';
+    rechazado('respuesta3');
 }
 
 function deshacer4() {
