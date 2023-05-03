@@ -26,29 +26,56 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkSwitch">
+                    <label class="form-check-label" for="darkSwitch">Modo oscuro</label>
+                  </div>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Perfil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link link-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Cambiar contraseña</a>
+                  <a class="nav-link link-danger" aria-current="page" data-bs-toggle="modal" data-bs-target="#changePassModal" href="#">Cambiar contraseña</a>
                 </li>
-                <li class="nav-item">
-                  
+                <li class="nav-item" >
+                  <a class="nav-link link-danger" aria-current="page" data-bs-toggle="modal" data-bs-target="#recoverPassModal" href="#">Recuperar contraseña</a>
                 </li>
               </ul>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkSwitch">
-                <label class="form-check-label" for="darkSwitch">Modo oscuro</label>
-              </div>
             </div>
           </div>
         </div>
       </nav>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="recoverPassModal" tabindex="-1" aria-labelledby="recoverPassModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar contraseña</h1>
+              <h1 class="modal-title fs-5" id="recoverPassModalLabel">Recuperar contraseña</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" aria-labelledby="emailHelpBlock">
+              </div>
+              <div id="emailHelpBlock" class="form-text">
+                En caso de que el correo electrónico sea válido para la cuenta, se enviará un mensaje con un link de recuperación.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Recuperar contraseña</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="changePassModal" tabindex="-1" aria-labelledby="changePassLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="changePassLabel">Cambiar contraseña</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -107,9 +134,19 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <!-- Activity 1-->
-                </li>
-                <li class="list-group-item">
-                  <!-- Activity 2-->
+                  <div class="row">
+                    <div class="col-md-4 mb-3 mb-sm-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Solicitudes cambios de EPP</h5>
+                          <p class="card-text">Permite visualizar el listado de
+                            solicitudes de autorización de “Cambio de EPP” en el caso que se genere una solicitud por
+                            “EPP en mal estado” o por “EPP causante de molestias”.</p>
+                          <a href="#" class="btn btn-primary">Ir al módulo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>

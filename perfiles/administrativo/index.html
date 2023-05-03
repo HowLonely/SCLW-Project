@@ -14,7 +14,7 @@
     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Inicio</a>
+          <a class="navbar-brand" href="./index.html">Inicio</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,29 +26,56 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkSwitch">
+                    <label class="form-check-label" for="darkSwitch">Modo oscuro</label>
+                  </div>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">Perfil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link link-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Cambiar contraseña</a>
+                  <a class="nav-link link-danger" aria-current="page" data-bs-toggle="modal" data-bs-target="#changePassModal" href="#">Cambiar contraseña</a>
                 </li>
-                <li class="nav-item">
-                  
+                <li class="nav-item" >
+                  <a class="nav-link link-danger" aria-current="page" data-bs-toggle="modal" data-bs-target="#recoverPassModal" href="#">Recuperar contraseña</a>
                 </li>
               </ul>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkSwitch">
-                <label class="form-check-label" for="darkSwitch">Modo oscuro</label>
-              </div>
             </div>
           </div>
         </div>
       </nav>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="recoverPassModal" tabindex="-1" aria-labelledby="recoverPassModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar contraseña</h1>
+              <h1 class="modal-title fs-5" id="recoverPassModalLabel">Recuperar contraseña</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" aria-labelledby="emailHelpBlock">
+              </div>
+              <div id="emailHelpBlock" class="form-text">
+                En caso de que el correo electrónico sea válido para la cuenta, se enviará un mensaje con un link de recuperación.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Recuperar contraseña</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="changePassModal" tabindex="-1" aria-labelledby="changePassLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="changePassLabel">Cambiar contraseña</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -113,7 +140,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Mantenedor de EPP</h5>
                           <p class="card-text">Permite crear nuevos EPP, actualizar o modificar sus características en la base de datos, hacer búsquedas de EPP y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
-                          <a href="#" class="btn btn-primary">Ir al mantenedor</a>
+                          <a href="../../mantenedorepp.html" class="btn btn-primary">Ir al mantenedor</a>
                         </div>
                       </div>
                     </div>
