@@ -14,6 +14,68 @@
     />
 </head>
 <body data-bs-theme="dark">
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../perfiles/APR/index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrativo</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Cambiar contraseña</a>
+              </li>
+              <li class="nav-item">
+                
+              </li>
+            </ul>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Modo oscuro</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar contraseña</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="inputPastPassword" class="form-label">Contraseña anterior</label>
+            <input type="password" id="inputPastPassword" class="form-control" aria-labelledby="passwordHelpBlock">
+
+            <label for="inputNewPassword" class="form-label">Nueva contraseña</label>
+            <input type="password" id="inputNewPassword" class="form-control" aria-labelledby="passwordHelpBlock">
+            
+            <label for="inputNewPasswordConfirm" class="form-label">Repetir nueva contraseña</label>
+            <input type="password" id="inputNewPasswordConfirm" class="form-control" aria-labelledby="passwordHelpBlock">
+            <div id="passwordHelpBlock" class="form-text">
+              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-danger">Cambiar contraseña</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <h3>Solicitudes EPP</h3>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
@@ -23,8 +85,8 @@
           Cambio de calzado 
         </div>
         <div class="card-body">
-          <h5 class="card-title">Pedro Pereira <span class="badge rounded-pill text-bg-primary" style="max-height: 1.4rem; font-size: small;">01-04-2023</span></h5>
-          <p class="card-text">Número incorrecto de calzado</p>
+          <h5 class="card-title">Angel Dominguez <span class="badge text-bg-primary" style="max-height: 1.4rem; font-size: small;">01-04-2023</span></h5>
+          <p class="card-text">Motivo: Número incorrecto de calzado</p>
           <a href="#" class="btn btn-success">Aprobar</a>
           <a href="#" class="btn btn-danger">Rechazar</a>
         </div>
@@ -33,13 +95,13 @@
     <li class="list-group-item">
       <div class="card">
         <div class="card-header">
-          <span class="badge rounded-pill text-bg-secondary">Pendiente</span>
+          <span class="badge text-bg-secondary">Pendiente</span>
           Cambio de guantes
         </div>
         <div class="card-body">
-          <h5 class="card-title">Pedro Pereira  <span class="badge rounded-pill text-bg-primary" style="max-height: 1.4rem; font-size: small;">28-03-2023</span></h5>
+          <h5 class="card-title">Juan Riarte  <span class="badge text-bg-primary" style="max-height: 1.4rem; font-size: small;">28-03-2023</span></h5>
           
-          <p class="card-text">Elemento de protección personal dañado</p>
+          <p class="card-text">Motivo: Elemento de protección personal dañado</p>
           
           <a href="#" class="btn btn-success">Aprobar</a>
           <a href="#" class="btn btn-danger">Rechazar</a>
@@ -48,12 +110,12 @@
       </div>
       <div class="card">
         <div class="card-header">
-          <span class="badge rounded-pill text-bg-secondary">Pendiente</span>
+          <span class="badge text-bg-secondary">Pendiente</span>
           Cambio de guantes
         </div>
         <div class="card-body">
-          <h5 class="card-title">Pedro Pereira <span class="badge rounded-pill text-bg-primary" style="max-height: 1.4rem; font-size: small;">22-03-2023</span></h5>
-          <p class="card-text">Elemento de protección personal dañado</p>
+          <h5 class="card-title">Pedro Pereira <span class="badge text-bg-primary" style="max-height: 1.4rem; font-size: small;">22-03-2023</span></h5>
+          <p class="card-text">Motivo: Elemento de protección personal dañado</p>
           <a href="#" class="btn btn-success">Aprobar</a>
           <a href="#" class="btn btn-danger">Rechazar</a>
         </div>
@@ -66,11 +128,11 @@
           Cambio de lentes
         </div>
         <div class="card-body">
-          <h5 class="card-title">Juan Perez <span class="badge rounded-pill text-bg-secondary" style="max-height: 1.4rem; font-size: small;">01-02-2023</span></h5>
-          <p class="card-text">Elemento de protección personal dañado</p>
+          <h5 class="card-title">Juan Perez <span class="badge text-bg-secondary" style="max-height: 1.4rem; font-size: small;">01-02-2023</span></h5>
+          <p class="card-text">Motivo: Elemento de protección personal dañado</p>
           <button type="button" class="btn btn-outline-success" disabled>Aprobar</button>
           <button type="button" class="btn btn-outline-danger" disabled>Rechazar</button>
-          <a href="#" class="btn btn-primary">Deshacer</a>
+          <a href="#" class="btn btn-dark">Deshacer</a>
         </div>
       </div>
     </li>
@@ -81,11 +143,11 @@
           Cambio de guantes
         </div>
         <div class="card-body">
-          <h5 class="card-title">Javier Sanchez <span class="badge rounded-pill text-bg-secondary" style="max-height: 1.4rem; font-size: small;">12-02-2023</span></h5>
-          <p class="card-text">No me gustó el diseño de los guantes</p>
+          <h5 class="card-title">Javier Sanchez <span class="badge text-bg-secondary" style="max-height: 1.4rem; font-size: small;">12-02-2023</span></h5>
+          <p class="card-text">Motivo: No me gustó el diseño de los guantes</p>
           <button type="button" class="btn btn-outline-success" disabled>Aprobar</button>
           <button type="button" class="btn btn-outline-danger" disabled>Rechazar</button>
-          <a href="#" class="btn btn-primary">Deshacer</a>
+          <a href="#" class="btn btn-dark">Deshacer</a>
         </div>
       </div>
     </li>
