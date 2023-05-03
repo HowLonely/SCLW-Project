@@ -191,7 +191,7 @@ a{
     justify-content: space-evenly;
 }
 
-#tablaEPPsTrabajador{
+#tablaEPPsTrabajador, #alert-trabajador, #alert-epp, #alert-motivo{
     display: none;
 }
 
@@ -221,6 +221,8 @@ table tr td{
 
 .centrar{
     text-align: center;
+    max-width: 22px;
+    padding-left: 4px;
 }
 
 h2{

@@ -13,18 +13,10 @@ function tablaEPPTrabajador() {
     }
 }
 
-function asignarEPPTrabajador() {
-    epp = document.getElementById('epp');
-    valorEPP = epp.value;
-
-    motivo = document.getElementById('motivo');
-    valorMotivo = motivo.value
-
-    if (valorEPP != "" && valorMotivo != "") {
-        motivoEPP = '<p>EPP ' + valorEPP + ' asignada por el motivo ' + valorMotivo + '</p>';
-        document.getElementById('asignacionesEPPsTrabajador').insertAdjacentHTML('beforeend', motivoEPP);
-        agregarEPPTabla(valorEPP);
-    }
+function asignarEPPTrabajador(epp, motivo) {
+    motivoEPP = '<p>EPP ' + epp + ' asignada por el motivo ' + motivo + '</p>';
+    document.getElementById('asignacionesEPPsTrabajador').insertAdjacentHTML('beforeend', motivoEPP);
+    agregarEPPTabla(epp);
 }
 
 function agregarEPPTabla(epp) {
@@ -38,6 +30,40 @@ function eliminarEPP() {
         alert("Se ha eliminado la asignación");
     } else {
         alert("No se ha eliminado la asignación");
+    }
+}
+
+function displayParametroVacio(parametro, div) {
+    if (parametro == '') {
+        div.style.display = 'block';
+    } else {
+        div.style.display = 'none';
+    }
+}
+
+function verificarParametros() {
+    trabajador = document.getElementById('trabajador');
+    valorTrabajador = trabajador.value;
+
+    epp = document.getElementById('epp');
+    valorEPP = epp.value;
+
+    motivo = document.getElementById('motivo');
+    valorMotivo = motivo.value
+
+    divAlertTrabajador = document.getElementById('alert-trabajador');
+    divAlertEPP = document.getElementById('alert-epp');
+    divAlertMotivo = document.getElementById('alert-motivo');
+
+    if (valorTrabajador != "" && valorEPP != "" && valorMotivo != "") {
+        divAlertTrabajador.style.display = 'none';
+        divAlertEPP.style.display = 'none';
+        divAlertMotivo.style.display = 'none';
+        asignarEPPTrabajador(valorEPP, valorMotivo);
+    } else {
+        displayParametroVacio(valorTrabajador, divAlertTrabajador);
+        displayParametroVacio(valorEPP, divAlertEPP);
+        displayParametroVacio(valorMotivo, divAlertMotivo);
     }
 }
 

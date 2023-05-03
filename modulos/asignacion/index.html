@@ -34,7 +34,18 @@
             </select>
         </div>
         <div id="div-botones">
-            <input type="submit" onclick="asignarEPPTrabajador()" value="Asignar EPP">
+            <input type="submit" id="input-submit" onclick="verificarParametros()" value="Asignar EPP">
+        </div>
+        <div>
+            <div id="alert-trabajador">
+                <p>Debe seleccionar un trabajador</p>
+            </div>
+            <div id="alert-epp">
+                <p>Debe seleccionar un EPP</p>
+            </div>
+            <div id="alert-motivo">
+                <p>Debe seleccionar un motivo</p>
+            </div> 
         </div>
     </form>
     <div id="tablaEPPsTrabajador">
