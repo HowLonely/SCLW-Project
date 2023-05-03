@@ -8,12 +8,12 @@ function sacarId(id) {
     }
 }
 
-function verificarParametrosTrabajador() {
-    ids = sacarId(['nombre', 'apellido', 'rut', 'telefono', 'cargo', 'faena-actual', 'fotografia']);
+function verificarParametrosEPP() {
+    ids = sacarId(['codigo', 'nombre', 'marca', 'stock', 'cargo', 'fotografias']);
     values = ids.map(x => x.value)
 
-    alertFormTrabajadores = document.getElementById('alert-form-trabajadores');
-    alertFormTrabajadores.innerHTML = ""
+    alertFormEPPs = document.getElementById('alert-form-epps');
+    alertFormEPPs.innerHTML = ""
 
     if (values.every(x => x != "")) {
         alert("Se ha ingresado correctamente");
@@ -21,17 +21,17 @@ function verificarParametrosTrabajador() {
         vacios = ids.filter(x => x.value == "").map(x => x.id);
         for (x of vacios) {
             parrafo = '<p>Debe ingresar ' + x + '</p>';
-            alertFormTrabajadores.insertAdjacentHTML('beforeend', parrafo);
+            alertFormEPPs.insertAdjacentHTML('beforeend', parrafo);
         }
     }
     
 }
 
-function eliminarTrabajador() {
-    res = confirm("¿Desea eliminar este trabajador?");
+function eliminarEPP() {
+    res = confirm("¿Desea eliminar este EPP?");
     if (res) {
-        alert("Se ha eliminado al trabajador");
+        alert("Se ha eliminado el EPP");
     } else {
-        alert("No se ha eliminado al trabajador");
+        alert("No se ha eliminado el EPP");
     }
 }

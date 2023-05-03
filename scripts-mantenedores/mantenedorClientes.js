@@ -8,12 +8,12 @@ function sacarId(id) {
     }
 }
 
-function verificarParametrosTrabajador() {
-    ids = sacarId(['nombre', 'apellido', 'rut', 'telefono', 'cargo', 'faena-actual', 'fotografia']);
+function verificarParametrosCliente() {
+    ids = sacarId(['nombre', 'rut', 'logo', 'nombre-contacto', 'telefono', 'email', 'foto-contacto']);
     values = ids.map(x => x.value)
 
-    alertFormTrabajadores = document.getElementById('alert-form-trabajadores');
-    alertFormTrabajadores.innerHTML = ""
+    alertFormClientes = document.getElementById('alert-form-clientes');
+    alertFormClientes.innerHTML = ""
 
     if (values.every(x => x != "")) {
         alert("Se ha ingresado correctamente");
@@ -21,17 +21,17 @@ function verificarParametrosTrabajador() {
         vacios = ids.filter(x => x.value == "").map(x => x.id);
         for (x of vacios) {
             parrafo = '<p>Debe ingresar ' + x + '</p>';
-            alertFormTrabajadores.insertAdjacentHTML('beforeend', parrafo);
+            alertFormClientes.insertAdjacentHTML('beforeend', parrafo);
         }
     }
     
 }
 
-function eliminarTrabajador() {
-    res = confirm("¿Desea eliminar este trabajador?");
+function eliminarCliente() {
+    res = confirm("¿Desea eliminar este cliente?");
     if (res) {
-        alert("Se ha eliminado al trabajador");
+        alert("Se ha eliminado al cliente");
     } else {
-        alert("No se ha eliminado al trabajador");
+        alert("No se ha eliminado al cliente");
     }
 }
