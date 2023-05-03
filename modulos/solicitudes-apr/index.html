@@ -81,21 +81,21 @@
     <li class="list-group-item">
       <div class="card">
         <div class="card-header">
-          <span class="badge rounded-pill text-bg-secondary">Pendiente</span>
-          Cambio de calzado 
+          <span id="respuesta1"><span class="badge rounded-pill text-bg-secondary">Pendiente</span></span>
+          Cambio de calzado
         </div>
         <div class="card-body">
           <h5 class="card-title">Angel Dominguez <span class="badge text-bg-primary" style="max-height: 1.4rem; font-size: small;">01-04-2023</span></h5>
           <p class="card-text">Motivo: Número incorrecto de calzado</p>
-          <a href="#" class="btn btn-success">Aprobar</a>
-          <a href="#" class="btn btn-danger">Rechazar</a>
+          <a href="#" onclick="aprobado1()" class="btn btn-success">Aprobar</a>
+          <a href="#" onclick="rechazado1()" class="btn btn-danger">Rechazar</a>
         </div>
       </div>
     </li>
     <li class="list-group-item">
       <div class="card">
         <div class="card-header">
-          <span class="badge text-bg-secondary">Pendiente</span>
+          <span id="respuesta2"><span class="badge rounded-pill text-bg-secondary">Pendiente</span></span>
           Cambio de guantes
         </div>
         <div class="card-body">
@@ -103,28 +103,28 @@
           
           <p class="card-text">Motivo: Elemento de protección personal dañado</p>
           
-          <a href="#" class="btn btn-success">Aprobar</a>
-          <a href="#" class="btn btn-danger">Rechazar</a>
+          <a href="#" onclick="aprobado2()" class="btn btn-success">Aprobar</a>
+          <a href="#" onclick="rechazado2()" class="btn btn-danger">Rechazar</a>
           
         </div>
       </div>
       <div class="card">
         <div class="card-header">
-          <span class="badge text-bg-secondary">Pendiente</span>
+          <span id="respuesta3"><span class="badge rounded-pill text-bg-secondary">Pendiente</span></span>
           Cambio de guantes
         </div>
         <div class="card-body">
           <h5 class="card-title">Pedro Pereira <span class="badge text-bg-primary" style="max-height: 1.4rem; font-size: small;">22-03-2023</span></h5>
           <p class="card-text">Motivo: Elemento de protección personal dañado</p>
-          <a href="#" class="btn btn-success">Aprobar</a>
-          <a href="#" class="btn btn-danger">Rechazar</a>
+          <a href="#" onclick="aprobado3()" class="btn btn-success">Aprobar</a>
+          <a href="#" onclick="rechazado3()" class="btn btn-danger">Rechazar</a>
         </div>
       </div>
     </li>
     <li class="list-group-item">
       <div class="card">
         <div class="card-header">
-          <span class="badge rounded-pill text-bg-success">Aprobado</span>
+          <span id="respuesta4"><span class="badge rounded-pill text-bg-success">Aprobado</span></span>
           Cambio de lentes
         </div>
         <div class="card-body">
@@ -132,14 +132,14 @@
           <p class="card-text">Motivo: Elemento de protección personal dañado</p>
           <button type="button" class="btn btn-outline-success" disabled>Aprobar</button>
           <button type="button" class="btn btn-outline-danger" disabled>Rechazar</button>
-          <a href="#" class="btn btn-dark">Deshacer</a>
+          <a href="#" onclick="deshacer4()" class="btn btn-dark">Deshacer</a>
         </div>
       </div>
     </li>
     <li class="list-group-item">
       <div class="card">
         <div class="card-header">
-          <span class="badge rounded-pill text-bg-danger">Rechazado</span>
+          <span id="respuesta5"><span class="badge rounded-pill text-bg-danger">Rechazado</span></span>
           Cambio de guantes
         </div>
         <div class="card-body">
@@ -147,10 +147,11 @@
           <p class="card-text">Motivo: No me gustó el diseño de los guantes</p>
           <button type="button" class="btn btn-outline-success" disabled>Aprobar</button>
           <button type="button" class="btn btn-outline-danger" disabled>Rechazar</button>
-          <a href="#" class="btn btn-dark">Deshacer</a>
+          <a href="#" onclick="deshacer5()" class="btn btn-dark">Deshacer</a>
         </div>
       </div>
     </li>
   </ul>
+  <script src="script.js"></script>
 </body>
 </html>

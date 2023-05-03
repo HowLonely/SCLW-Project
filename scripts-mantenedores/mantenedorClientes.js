@@ -13,7 +13,7 @@ function verificarParametrosCliente() {
     values = ids.map(x => x.value)
 
     alertFormClientes = document.getElementById('alert-form-clientes');
-    alertFormClientes.innerHTML = ""
+    alertFormClientes.innerHTML = "";
 
     if (values.every(x => x != "")) {
         alert("Se ha ingresado correctamente");
