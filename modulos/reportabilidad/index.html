@@ -18,16 +18,46 @@
   <body data-bs-theme="dark">
     <!--Cambio diseño pagina-->
     <main>
-      <div class="grid">
-        <div class="col">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Seleccionar tipo de reporte</option>
-            <option value="1"> Listado de EPP entregados a un trabajador en un periodo determinado.</option>
+      <div class="container">
+        <div class="row my-3">
+          <select class="form-select" onblur="mostrarSelect()" id="select-reporte">
+            <option selected hidden>Seleccionar tipo de reporte</option>
+            <option value="1">Listado de EPP entregados a un trabajador en un periodo determinado.</option>
             <option value="2">Listado de EPP entregados a un trabajador en una faena determinada.</option>
             <option value="3">Listado de EPP entregados según un número de contrato de un cliente</option>
           </select>
         </div>
+        <div class="row gap-3 my-3" id="select-fecha">
+          <select class="col form-select">
+            <option selected hidden>Seleccionar trabajador</option>
+            <option value="1">Trabajador 1</option>
+            <option value="2">Trabajador 2</option>
+            <option value="3">Trabajador 3</option>
+          </select>
+          <input type="date" class="col-2" name="fecha-inicio" id="fecha-inicio">
+          <input type="date" class="col-2"  name="fecha-termino" id="fecha-termino">
+          <input type="submit" class="col-2" value="Generar">
+        </div>
+        <div class="row gap-3 my-3" id="select-faena">
+          <select class="col form-select">
+            <option selected hidden>Seleccionar faena</option>
+            <option value="1">Faena 1</option>
+            <option value="2">Faena 2</option>
+            <option value="3">Faena 3</option>
+          </select>
+          <input type="submit" class="col-2" value="Generar">
+        </div>
+        <div class="row gap-3 my-3" id="select-trabajador">
+          <select class="col form-select">
+            <option selected hidden>Seleccionar trabajador</option>
+            <option value="1">Trabajador 1</option>
+            <option value="2">Trabajador 2</option>
+            <option value="3">Trabajador 3</option>
+          </select>
+          <input type="submit" class="col-2" value="Generar">
+        </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
