@@ -133,7 +133,7 @@
             <option value="2">Trabajador 2</option>
             <option value="3">Trabajador 3</option>
           </select>
-          <input type="submit" class="col-2 btn btn-primary" value="Generar">
+          <input type="submit" class="col-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal" value="Generar">
         </div>
 
         <!--: Listado de EPP entregados a un trabajador en un periodo determinado.-->
@@ -146,7 +146,7 @@
           </select>
           <input type="date" class="col-2" name="fecha-inicio" id="fecha-inicio">
           <input type="date" class="col-2"  name="fecha-termino" id="fecha-termino">
-          <input type="submit" onclick="compararFechas()" class="col-2 btn btn-primary" value="Generar">
+          <input type="submit" onclick="compararFechas()" data-bs-toggle="modal" data-bs-target="#reportModal" class="col-2 btn btn-primary" value="Generar">
 
           <div id="alert-fecha" class="col-12 alert alert-danger" role="alert">
               <p>La fecha de inicio debe ser antes de la fecha de termino</p>
@@ -161,7 +161,7 @@
             <option value="2">Faena 2</option>
             <option value="3">Faena 3</option>
           </select>
-          <input type="submit" class="col-2 btn btn-primary" value="Generar">
+          <input type="submit" class="col-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal" value="Generar">
         </div>
 
         <!--: Listado de EPP entregados según un número de contrato de un cliente.-->
@@ -172,7 +172,25 @@
             <option value="2">Trabajador 2</option>
             <option value="3">Trabajador 3</option>
           </select>
-          <input type="submit" class="col-2 btn btn-primary" value="Generar">
+          <input type="submit" class="col-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal" value="Generar">
+        </div>
+
+        <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="reportModalLabel">Reporte generado correctamente</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                {detalles del reporte seleccionado}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Descargar</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
