@@ -21,3 +21,31 @@ function esconderCreacionCuenta() {
     creacionCliente.style.display = 'none';
     creacionAdministrativa.style.display = 'none';
 }
+
+function sacarId(id) {
+    if (Array.isArray(id)) {
+        ids = id.map(x => document.getElementById(x));
+        return ids;
+    } else {
+        ids = document.getElementById(id);
+        return ids;
+    }
+}
+
+function verificarParametrosCliente() {
+    ids = sacarId(['inputFirstNameCliente', 'inputEmailCliente', 'inputFonoCliente', 'inputImagenCliente']);
+    values = ids.map(x => x.value)
+
+    if (values.every(x => x != "")) {
+        alert("Se ha creado la cuenta correctamente");
+    }
+}
+
+function verificarParametrosAdministrativo() {
+    ids = sacarId(['inputFirstNameAdministrativo', 'inputLastNameAdministrativo', 'inputEmailAdministrativo', 'inputFonoAdministrativo', 'inputImagenAdministrativo']);
+    values = ids.map(x => x.value)
+
+    if (values.every(x => x != "")) {
+        alert("Se ha creado la cuenta correctamente");
+    }
+}
