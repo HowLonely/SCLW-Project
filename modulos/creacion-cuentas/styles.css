@@ -28,3 +28,7 @@ main {
   display: flex;
   gap: 3rem;
 }
+
+#creacionCuentaCliente, #creacionCuentaAdministrativa {
+  display: none;
+}

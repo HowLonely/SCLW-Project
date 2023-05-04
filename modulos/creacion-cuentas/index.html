@@ -111,15 +111,16 @@
   <main>
     <div class="container">
       <!--Select tipo de cuenta-->
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-
+      <div class="my-4">
+        <h2 class="my-2">Creación de cuentas</h2>
+        <select name="tipo-cuenta" id="tipo-cuenta" onchange="mostrarCreacionCuenta()" class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option value = "" selected hidden>Seleecione tipo de cuenta a crear</option>
+          <option value="1">Cliente</option>
+          <option value="2">Administrativo</option>
+        </select>
+      </div>
       <!--Creación cuenta cliente-->
-      <h1>este es el de clientes</h1>
+      <div id="creacionCuentaCliente">
       <form class="row g-3 needs-validation was-validated" novalidate="">
         <div class="col-md-4">
           <label for="inputClientName" class="form-label">Nombre de la empresa</label>
@@ -158,19 +159,14 @@
           <label for="inputlog" class="form-label">Imagen perfil</label>
           <input type="file" class="form-control" id="inputImagenAdministrativo">
         </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-12">
-
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Crear cuenta</button>
+        <div class="col-12 position-relative">
+          <button class="btn btn-primary position-absolute top-50 start-50 translate-middle" type="submit">Crear cuenta</button>
         </div>
       </form>
+    </div>
 
-      <h1>este es el de administrativo</h1>
       <!--Creación Cuenta administrativo-->
+      <div id="creacionCuentaAdministrativa">
       <form class="row g-3 needs-validation was-validated" novalidate="">
         <div class="col-md-4">
           <label for="inputFirstName" class="form-label">Nombre</label>
@@ -216,12 +212,14 @@
           <label for="inputlog" class="form-label">Imagen perfil</label>
           <input type="file" class="form-control" id="inputImagenAdministrativo">
         </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Crear cuenta</button>
+        <div class="col-12 position-relative">
+          <button class="btn btn-primary position-absolute top-50 start-50 translate-middle" type="submit">Crear cuenta</button>
         </div>
       </form>
     </div>
+    </div>
   </main>
+  <script src="script.js"></script>
 </body>
 <script src="../../services/scriptDarkMode.js"></script>
 
