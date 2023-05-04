@@ -8,7 +8,6 @@
 body {
   flex-direction: column;
   justify-content: center;
-  background-color: #15202B;
 }
 
 /*
@@ -61,7 +60,6 @@ form div input{
     text-align: center;
     margin: 24px auto;
     border-radius: 10px;
-    color: #22A7F0;
 }
 
 input[type="submit"]{
@@ -96,9 +94,7 @@ a{
     padding: 8px 12px;
     border-radius: 8px;
     width: 77.3%;
-    background-color: #15202B;
-    color: white;
-    border: 1px solid #E5E5E5;
+    border: 1px solid;
 }
 
 .input-file-div{
@@ -118,27 +114,26 @@ a{
     display: none;
 }
 
+#alert-trabajador, #alert-epp, #alert-motivo {
+    text-align: left;
+    padding-bottom: 0px;
+}
+
 #asignacionesEPPsTrabajador{
     text-align: center;
-    color: #e1e1e1;
     margin-top: 14px;
 }
 
 table{
     margin-left: auto;
     margin-right: auto;
-    color: #22A7F0;
     border-collapse: collapse;
     margin-top: 12px;
 }
 
-table tr th h3{
-    color: #E5E5E5;
-}
-
 table tr td{
     width: 200px;
-    border-left: solid 3px #E5E5E5;
+    border-left: solid 3px;
     padding-left: 8px;
 }
 
@@ -150,7 +145,6 @@ table tr td{
 
 h2{
     text-align: center;
-    color: #E5E5E5;
     margin-top: 40px;
     margin-bottom: 30px;
 }
@@ -192,7 +186,7 @@ footer * {
         width: 100%;
     }
     table tr td{
-        border-left: solid 1px #E5E5E5;
+        border-left: solid 1px;
         padding-left: 0px;
         padding-top: 14px;
     }

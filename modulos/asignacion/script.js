@@ -14,7 +14,7 @@ function tablaEPPTrabajador() {
 }
 
 function asignarEPPTrabajador(epp, motivo) {
-    motivoEPP = '<p>EPP ' + epp + ' asignada por el motivo ' + motivo + '</p>';
+    motivoEPP = '<li class="list-group-item">EPP ' + epp + ' asignado por el motivo ' + motivo + '</li>';
     document.getElementById('asignacionesEPPsTrabajador').insertAdjacentHTML('beforeend', motivoEPP);
     agregarEPPTabla(epp);
 }

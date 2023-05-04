@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-bs-theme="dark">
     <header>
         <nav class="navbar bg-body-tertiary">
           <div class="container-fluid">
@@ -129,13 +129,13 @@
             <input type="submit" id="input-submit" onclick="verificarParametros()" value="Asignar EPP">
         </div>
         <div>
-            <div id="alert-trabajador">
+            <div id="alert-trabajador" class="alert alert-danger" role="alert">
                 <p>Debe seleccionar un trabajador</p>
             </div>
-            <div id="alert-epp">
+            <div id="alert-epp" class="alert alert-danger" role="alert">
                 <p>Debe seleccionar un EPP</p>
             </div>
-            <div id="alert-motivo">
+            <div id="alert-motivo" class="alert alert-danger" role="alert">
                 <p>Debe seleccionar un motivo</p>
             </div> 
         </div>
@@ -162,10 +162,11 @@
             </tr>
             <tr id="tablaEPP"></tr>
         </table>
-        <div>
-            <h2>Asignaciones</h2>
-            <div id="asignacionesEPPsTrabajador"></div>
-        </div>
+        <div class="container">
+          <h2>Asignaciones</h2>
+        <ul id="asignacionesEPPsTrabajador" class="list-group">
+        </ul>
+      </div>
     </div>
     <script src="script.js"></script>
     <script src="./scriptDarkMode.js"></script>
