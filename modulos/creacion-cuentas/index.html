@@ -119,8 +119,57 @@
       </select>
 
       <!--Creación cuenta cliente-->
+      <h1>este es el de clientes</h1>
+      <form class="row g-3 needs-validation was-validated" novalidate="">
+        <div class="col-md-4">
+          <label for="inputClientName" class="form-label">Nombre de la empresa</label>
+          <input type="text" class="form-control" id="inputFirstName" placeholder="Minera escondida" required="">
+          <div class="valid-feedback">
+            Se ve correcto!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputEmail" class="form-label">Correo de la empresa</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="inputEmail" aria-describedby="inputGroupPrepend" required="">
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>gmail.com</option>
+              <option value="1">outlook.com</option>
+              <option value="2">hotmail.com</option>
+              <option value="3">yahoo.com</option>
+            </select>
+            <div class="invalid-feedback">
+              Por favor, ingresa un correo electrónico válido
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputFono" class="form-label">Número contacto</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">+56 9</span>
+            <input type="text" class="form-control" id="inputFono" aria-describedby="inputGroupPrepend" required
+              placeholder="882083XX">
+            <div class="invalid-feedback">
+              Porfavor ingresa un número de contacto.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputlog" class="form-label">Imagen perfil</label>
+          <input type="file" class="form-control" id="inputImagenAdministrativo">
+        </div>
+        <div class="col-md-3">
 
+        </div>
+        <div class="col-12">
 
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Crear cuenta</button>
+        </div>
+      </form>
+
+      <h1>este es el de administrativo</h1>
       <!--Creación Cuenta administrativo-->
       <form class="row g-3 needs-validation was-validated" novalidate="">
         <div class="col-md-4">
@@ -163,14 +212,9 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-12">
-
+        <div class="col-md-4">
+          <label for="inputlog" class="form-label">Imagen perfil</label>
+          <input type="file" class="form-control" id="inputImagenAdministrativo">
         </div>
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Crear cuenta</button>
