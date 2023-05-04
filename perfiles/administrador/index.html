@@ -14,7 +14,7 @@
     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Inicio</a>
+          <a class="navbar-brand" href="./index.html">Panel principal</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -104,14 +104,14 @@
     <div class="container" style="padding: 1rem;">
       <div class="col">
         <div class="profile row" style="justify-content: center; gap: 1rem;">
-          <div class="ic-profile__container" style="max-width: 20rem;">
-            <img src="../../assets/prevencionista_profile.png" alt="profile-icon"/>
+          <div class="ic-profile__container" style="max-width: 10rem;">
+            <img src="../../assets/admin.png" alt="profile-icon"/>
           </div>
           <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
-            <h2>Pablo Diaz Toledo</h2>
+            <h2>Administrador</h2>
             <span class="badge text-bg-success" style="max-width: 5rem;">Online</span>
           </div>
-          <span class="badge text-bg-warning" style="max-width: 10rem;">Prevencionista</span>
+          <span class="badge text-bg-danger" style="max-width: 10rem;">Administrador sistema</span>
 
         </div>
         <div class="row">
@@ -135,16 +135,94 @@
 
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <!-- Activity 1-->
+                  <h3>Administración</h3>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Módulo creación cuentas</h5>
+                          <p class="card-text">Permite crear nuevos trabajadores, actualizar o modificar sus datos en la base de datos, hacer búsquedas de Trabajadores y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="#" class="btn btn-primary">Ir al módulo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </li>
+                <li class="list-group-item">
+                  <h3>Mantenedores</h3>
                   <div class="row">
                     <div class="col-md-4 mb-3 mb-sm-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Mantenedor de EPP</h5>
+                          <p class="card-text">Permite crear nuevos EPP, actualizar o modificar sus características en la base de datos, hacer búsquedas de EPP y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="../../mantenedorepp.html" class="btn btn-primary disabled">Ir al mantenedor</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Mantenedor de clientes</h5>
+                          <p class="card-text">Permite crear nuevos clientes, actualizar o modificar sus datos en la base de datos, hacer búsquedas de clientes y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="../../mantenedorclientes.html" class="btn btn-primary disabled">Ir al mantenedor</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Mantenedor de trabajadores</h5>
+                          <p class="card-text">Permite crear nuevos trabajadores, actualizar o modificar sus datos en la base de datos, hacer búsquedas de Trabajadores y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="../../mantenedortrabajadores.html" class="btn btn-primary disabled">Ir al mantenedor</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <h3>Módulos</h3>
+                  <div class="row">
+                    <div class="col-md-4 mb-3 mb-sm-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Módulo de asignación</h5>
+                          <p class="card-text">Permite crear nuevos EPP, actualizar o modificar sus características en la base de datos, hacer búsquedas de EPP y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="../../modulos/asignacion/index.html" class="btn btn-primary disabled">Ir al módulo</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Módulo de reportes</h5>
+                          <p class="card-text">Permite crear nuevos clientes, actualizar o modificar sus datos en la base de datos, hacer búsquedas de clientes y el bloqueo de ellos para nuevas transacciones si así se requiere</p>
+                          <a href="../../modulos/reportabilidad/index.html" class="btn btn-primary disabled">Ir al módulo</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
                       <div class="card">
                         <div class="card-body">
                           <h5 class="card-title">Solicitudes cambios de EPP</h5>
                           <p class="card-text">Permite visualizar el listado de
                             solicitudes de autorización de “Cambio de EPP” en el caso que se genere una solicitud por
                             “EPP en mal estado” o por “EPP causante de molestias”.</p>
-                          <a href="../../modulos/solicitudes-apr/index.html" class="btn btn-primary">Ir al módulo</a>
+                          <a href="../../modulos/solicitudes-apr/index.html" class="btn btn-primary disabled">Ir al módulo</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Historico de asignaciones EPP</h5>
+                          <p class="card-text">
+                            Permite consultar el histórico de asignación de EPP a un trabajador,
+                            es decir, poder visualizar todas las oportunidades en que se entregaron EPP a un trabajador
+                            indicando para que faena, con qué cargo y en qué fecha.
+                          </p>
+                          <a href="#" class="btn btn-primary disabled">Ir al módulo</a>
                         </div>
                       </div>
                     </div>
@@ -156,10 +234,10 @@
               <!--about me-->
               <ul class="list-group">
                 <li class="list-group-item">
-                  <p>Este perfil podrá visualizar el listado de solicitudes de autorización de “Cambio de EPP” en el caso que se genere una solicitud por
-                    “EPP en mal estado” o por “EPP causante de molestias”.
-                    Debe también autorizar o rechazar las solicitudes mencionadas en el punto anterior,
-                    revisando en detalle al seleccionarla del listado.
+                  <p>Esta cuenta tendrá acceso total a toda la aplicación, pudiendo modificar
+                    y bloquear los mantenedores, considerando que el perfil de Administrativo no cuenta con este
+                    permiso. Esta cuenta permite además, crear, modificar, bloquear y eliminar otras cuentas dentro
+                    del sistema, sin embargo, esta cuenta no puede ser eliminada o bloqueada.
                     </p>
                 </li>
               </ul>
@@ -167,8 +245,8 @@
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
               <!-- Contact -->
               <ul class="list-group">
-                <li class="list-group-item">Telefono: (+56 9) 78398378</li>
-                <li class="list-group-item">Email: <a href="#" class="link-primary">pablo.dt@aprsclw.cl</a></li>
+                <li class="list-group-item">Telefono: (+56 9) XXXXXXXX</li>
+                <li class="list-group-item">Email: <a href="#" class="link-primary">admin@sclw.cl</a></li>
               </ul>
             </div>
           </div>
