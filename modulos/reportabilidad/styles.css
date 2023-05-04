@@ -19,6 +19,6 @@
   
   Gris claro: #E5E5E5
 */
-#select-fecha, #select-faena, #select-trabajador {
+#select-fecha, #select-faena, #select-trabajador, #alert-fecha {
   display: none;
 }

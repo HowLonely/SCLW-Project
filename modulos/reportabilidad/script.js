@@ -21,6 +21,19 @@ function cambiardisplay(id) {
   }
 }
 
+function compararFechas() {
+  alertFecha = document.getElementById('alert-fecha');
+  alertFecha.style.display = 'none';
+  fechaInicio = document.getElementById('fecha-inicio');
+  valueFechaInicio = fechaInicio.value;
+  fechaTermino = document.getElementById('fecha-termino');
+  valueFechaTermino = fechaTermino.value;
+  
+  if (valueFechaInicio > valueFechaTermino) {
+    alertFecha.style.display = 'flex';
+  }
+}
+
 function mostrarSelect() {
   reporte = document.getElementById("select-reporte");
   valueReporte = reporte.value;
