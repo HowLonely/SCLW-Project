@@ -1,6 +1,26 @@
 <?php
 include("connection.php");
 
+$query = "SELECT nombre, apellido, rut, cargo
+          FROM trabajador;";
+
+$resultado = mysqli_query($connect, $query);
+
+if (mysqli_num_rows($resultado) == 0) {
+  $trabajadores = "<tr><td colspan='5'>No se han encontrado trabajadores</td></tr>";
+} else {
+  $trabajadores = "";
+  while ($fila = mysqli_fetch_assoc($resultado)) {
+    $trabajadores .= "<tr>";
+    $trabajadores .= "<td>".$fila['rut']."</td>";
+    $trabajadores .= "<td>".$fila['nombre']."</td>";
+    $trabajadores .= "<td>".$fila['apellido']."</td>";
+    $trabajadores .= "<td>".$fila['cargo']."</td>";
+    $trabajadores .= "<td class='centrar'><a data-bs-toggle='collapse' href='' aria-expanded='false' aria-controls='trabajador3' title='Ver detalles'>👁️</a></td>";
+    $trabajadores .= "<tr>";
+  }
+}
+
 if (isset($_POST['boton-ingresar'])) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -123,27 +143,18 @@ if (isset($_POST['boton-ingresar'])) {
     <div>
         <h2>Faena 1</h2>
         <table>
-            <tr>
-                <th><h3>Rut</h3></th>
-                <th><h3>Nombre</h3></th>
-                <th><h3>Apellido</h3></th>
-                <th><h3>Cargo</h3></th>
-                <th class="acciones-table"><h3>Acciones</h3></th>
-            </tr>
-            <tr>
-                <td>19231283</td>
-                <td>asdasd</td>
-                <td>asd</td>
-                <td>dsfsdfsfd</td>
-                <td class="centrar"><a data-bs-toggle="collapse" href="#trabajador1" aria-expanded="false" aria-controls="trabajador1" title="Ver detalles">👁️</a></td>
-            </tr>
-            <tr>
-                <td>23123123</td>
-                <td>sdvcxvcxv</td>
-                <td>asd</td>
-                <td>sdffds</td>
-                <td class="centrar"><a data-bs-toggle="collapse" href="#trabajador2" aria-expanded="false" aria-controls="trabajador2" title="Ver detalles">👁️</a></td>
-            </tr>
+            <thead>
+              <tr>
+                  <th><h3>Rut</h3></th>
+                  <th><h3>Nombre</h3></th>
+                  <th><h3>Apellido</h3></th>
+                  <th><h3>Cargo</h3></th>
+                  <th class="acciones-table"><h3>Acciones</h3></th>
+              </tr>
+            </thead>
+            <tbody>
+                  <?php echo @$trabajadores ?>
+            </tbody>
         </table>
         <div class="collapse mx-auto my-4 container" id="trabajador1">
           <div class="row">
