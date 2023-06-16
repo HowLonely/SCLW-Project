@@ -24,15 +24,50 @@ if (mysqli_num_rows($resultado) == 0) {
 if (isset($_POST['boton-ingresar'])) {
     $nombre = $_POST['nombre'];
     $rut = $_POST['rut'];
-    $logo = $_POST['logo'];
+    $nombreLogo = $_FILES['logo']['name'];
+    $tipoLogo = $_FILES['logo']['type'];
+    $tamanioLogo = $_FILES['logo']['name'];
+    $nombreTempLogo = $_FILES['logo']['name'];
+    $rutaLogo = "assets/logos/";
     $nombre_contacto = $_POST['nombre-contacto'];
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
-    $foto = $_POST['foto-contacto'];
+    $nombreFoto = $_FILES['foto-contacto']['name'];
+    $tipoFoto = $_FILES['foto-contacto']['type'];
+    $tamanioFoto = $_FILES['foto-contacto']['size'];
+    $nombreTempFoto = $_FILES['foto-contacto']['tmp_name'];
+    $rutaFoto = "assets/clientes/";
+
+    if (($nombreLogo == !NULL) && ($tamanioLogo <= 3000000)) {
+      if (($tipoLogo == "image/png") || ($tipoLogo == "image/gif") || ($tipoLogo == "image/jpg") || ($tipoLogo == "image/jpeg")) {
+          $nuevoNombreLogo = "logoEmpresa".$id.".png";
+          //subir la foto al server
+          move_uploaded_file($nombreTempLogo,$rutaLogo.$nombreNuevoLogo);
+      }else{
+          $nuevoNombreLogo = "defaultLogo.png";    
+          $respuesta = "El formato del logo no esta permitido, no se registrará la imagen";
+      }
+    }else{
+      $nuevoNombreLogo = "defaultLogo.png";
+      $respuesta = "El tamaño del logo supera el máximo permitido, no se registrará la imagen";
+    }
+
+    if (($nombreFoto == !NULL) && ($tamanioFoto <= 3000000)) {
+      if (($tipoFoto == "image/png") || ($tipoFoto == "image/gif") || ($tipoFoto == "image/jpg") || ($tipoFoto == "image/jpeg")) {
+          $nuevoNombreFoto = "cliente".$id.".png";
+          //subir la foto al server
+          move_uploaded_file($nombreTempFoto,$rutaFoto.$nombreNuevoFoto);
+      }else{
+          $nuevoNombreFoto = "default.png";    
+          $respuesta = "El formato de la foto no esta permitido, no se registrará la imagen";
+      }
+    }else{
+      $nuevoNombreFoto = "default.png";
+      $respuesta = "El tamaño de la foto supera el máximo permitido, no se registrará la imagen";
+    }
 
     $query = "INSERT INTO cliente(nombre, rut, logo, nombre_contacto, telefono_contacto, email_contacto, fotografia_contacto)
-                VALUES('".$nombre."', '".$rut."', '".$logo."', '".$nombre_contacto."', '".$telefono."', '".$email."', '".$foto."');";
-    
+                VALUES('".$nombre."', '".$rut."', '".$nuevoNombreLogo."', '".$nombre_contacto."', '".$telefono."', '".$email."', '".$nuevoNombreFoto."');";
     if (mysqli_query($connect, $query)) {
         $respuesta = "<div class='alert alert-success'>Cliente ingresado correctamente</div>";
     } else {
