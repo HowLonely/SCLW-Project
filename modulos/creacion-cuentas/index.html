@@ -156,6 +156,16 @@
           </div>
         </div>
         <div class="col-md-4">
+          <label for="inputlog" class="form-label">Contraseña</label>
+          <div class="input-group has-validation">
+            <input type="password" class="form-control" id="inputPassCliente" aria-describedby="inputGroupPrepend" required
+              placeholder="**************">
+            <div class="invalid-feedback">
+              Porfavor ingresa una contraseña para continuar.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
           <label for="inputlog" class="form-label">Imagen perfil</label>
           <input type="file" class="form-control" id="inputImagenCliente">
         </div>
@@ -167,7 +177,7 @@
 
       <!--Creación Cuenta administrativo-->
       <div id="creacionCuentaAdministrativa">
-      <form class="row g-3 needs-validation was-validated" onsubmit="return false" novalidate="">
+      <form class="row g-3 needs-validation was-validated" onsubmit="return false" novalidate="" action="registrar.php" method="POST">
         <div class="col-md-4">
           <label for="inputFirstName" class="form-label">Nombre</label>
           <input type="text" class="form-control" id="inputFirstNameAdministrativo" placeholder="Mark" required="">
@@ -205,6 +215,16 @@
               placeholder="882083XX">
             <div class="invalid-feedback">
               Porfavor ingresa un número de contacto.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputlog" class="form-label">Contraseña</label>
+          <div class="input-group has-validation">
+            <input type="password" class="form-control" id="inputPassAdministrativo" aria-describedby="inputGroupPrepend" required
+              placeholder="**************">
+            <div class="invalid-feedback">
+              Porfavor ingresa una contraseña para continuar.
             </div>
           </div>
         </div>
