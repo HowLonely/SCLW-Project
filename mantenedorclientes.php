@@ -1,37 +1,40 @@
 <?php
 include("connection.php");
 
-$query = "SELECT id, nombre, rut, nombre_contacto, telefono_contacto, email_contacto
-          FROM cliente;";
+$query = "SELECT nombre, rut_cliente, nombre_contacto, telefono_contacto, email_contacto
+          FROM clientes;";
 
 $resultado = mysqli_query($connect, $query);
 
 if (mysqli_num_rows($resultado) == 0) {
-  $clientes = "<tr><td colspan='5'>No se han encontrado clientes</td></tr>";
+  $clientes = "<tr><td colspan='5' style='width: 80%'>No se han encontrado clientes</td></tr>";
 } else {
   $clientes = "";
   while ($fila = mysqli_fetch_assoc($resultado)) {
     $clientes .= "<tr>";
-    $clientes .= "<td>".$fila['rut']."</td>";
+    $clientes .= "<td>".$fila['rut_cliente']."</td>";
     $clientes .= "<td>".$fila['nombre']."</td>";
     $clientes .= "<td>".$fila['nombre_contacto']."</td>";
     $clientes .= "<td>".$fila['telefono_contacto']."</td>";
-    $clientes .= "<td class='centrar'><a href='mailto: ".$fila['email_contacto']."' title='Enviar Correo'>📧</a> <a href='mantenedorclientes.php?id=".$fila['id']."' title='Ver detalles'>👁️</a></td>";
+    $clientes .= "<td class='centrar'><a href='mailto: ".$fila['email_contacto']."' title='Enviar Correo'>📧</a> <a href='mantenedorclientes.php?rut=".$fila['rut_cliente']."' title='Ver detalles'>👁️</a></td>";
     $clientes .= "<tr>";
   }
 }
 
 if (isset($_POST['boton-ingresar'])) {
+    $email = $_POST['email'];
+    $passwd = $_POST['passwd'];
+    $passwd_hash = password_hash($passwd,PASSWORD_DEFAULT,["cost"=>10]);
     $nombre = $_POST['nombre'];
     $rut = $_POST['rut'];
     $nombreLogo = $_FILES['logo']['name'];
     $tipoLogo = $_FILES['logo']['type'];
-    $tamanioLogo = $_FILES['logo']['name'];
-    $nombreTempLogo = $_FILES['logo']['name'];
+    $tamanioLogo = $_FILES['logo']['size'];
+    $nombreTempLogo = $_FILES['logo']['tmp_name'];
     $rutaLogo = "assets/logos/";
     $nombre_contacto = $_POST['nombre-contacto'];
+    $email_contacto = $_POST['email-contacto'];
     $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
     $nombreFoto = $_FILES['foto-contacto']['name'];
     $tipoFoto = $_FILES['foto-contacto']['type'];
     $tamanioFoto = $_FILES['foto-contacto']['size'];
@@ -40,9 +43,9 @@ if (isset($_POST['boton-ingresar'])) {
 
     if (($nombreLogo == !NULL) && ($tamanioLogo <= 3000000)) {
       if (($tipoLogo == "image/png") || ($tipoLogo == "image/gif") || ($tipoLogo == "image/jpg") || ($tipoLogo == "image/jpeg")) {
-          $nuevoNombreLogo = "logoEmpresa".$id.".png";
+          $nuevoNombreLogo = "logoEmpresa".$rut.".png";
           //subir la foto al server
-          move_uploaded_file($nombreTempLogo,$rutaLogo.$nombreNuevoLogo);
+          move_uploaded_file($nombreTempLogo,$rutaLogo.$nuevoNombreLogo);
       }else{
           $nuevoNombreLogo = "defaultLogo.png";    
           $respuesta = "El formato del logo no esta permitido, no se registrará la imagen";
@@ -54,9 +57,9 @@ if (isset($_POST['boton-ingresar'])) {
 
     if (($nombreFoto == !NULL) && ($tamanioFoto <= 3000000)) {
       if (($tipoFoto == "image/png") || ($tipoFoto == "image/gif") || ($tipoFoto == "image/jpg") || ($tipoFoto == "image/jpeg")) {
-          $nuevoNombreFoto = "cliente".$id.".png";
+          $nuevoNombreFoto = "cliente".$rut.".png";
           //subir la foto al server
-          move_uploaded_file($nombreTempFoto,$rutaFoto.$nombreNuevoFoto);
+          move_uploaded_file($nombreTempFoto,$rutaFoto.$nuevoNombreFoto);
       }else{
           $nuevoNombreFoto = "default.png";    
           $respuesta = "El formato de la foto no esta permitido, no se registrará la imagen";
@@ -66,8 +69,8 @@ if (isset($_POST['boton-ingresar'])) {
       $respuesta = "El tamaño de la foto supera el máximo permitido, no se registrará la imagen";
     }
 
-    $query = "INSERT INTO cliente(nombre, rut, logo, nombre_contacto, telefono_contacto, email_contacto, fotografia_contacto)
-                VALUES('".$nombre."', '".$rut."', '".$nuevoNombreLogo."', '".$nombre_contacto."', '".$telefono."', '".$email."', '".$nuevoNombreFoto."');";
+    $query = "INSERT INTO clientes(email_cuenta, contrasenia,nombre, rut_cliente, logo, nombre_contacto, telefono_contacto, email_contacto, fotografia_contacto)
+                VALUES('".$email."', '".$passwd_hash."','".$nombre."', '".$rut."', '".$nuevoNombreLogo."', '".$nombre_contacto."', '".$telefono."', '".$email."', '".$nuevoNombreFoto."');";
     if (mysqli_query($connect, $query)) {
         $respuesta = "<div class='alert alert-success'>Cliente ingresado correctamente</div>";
     } else {
@@ -138,6 +141,12 @@ if (isset($_POST['boton-ingresar'])) {
     <form action="" method="post" enctype="multipart/form-data" class="form-mantenedor">
         <h3>Mantenedor de clientes</h3>
         <div class="alinear-divs-form">
+            <label for="email">Email: </label><input type="email" id="email" name="email" placeholder="Ingrese email del cliente" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
+            <label for="passwd">Contraseña: </label><input type="password" id="passwd" name="passwd" placeholder="Ingrese contraseña del cliente" class="inputs-form">
+        </div>
+        <div class="alinear-divs-form">
             <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del cliente" class="inputs-form">
         </div>
         <div class="alinear-divs-form">
@@ -153,7 +162,7 @@ if (isset($_POST['boton-ingresar'])) {
             <label for="telefono">Telefono Contacto: </label><input type="tel" id="telefono" name="telefono" pattern="^[0-9]+" placeholder="Ingrese telefono del contacto (9 8880XXXX)" class="inputs-form">
         </div>
         <div class="alinear-divs-form">
-            <label for="email">Email Contacto: </label><input type="email" id="email" name="email" placeholder="Ingrese email del contacto" class="inputs-form">
+            <label for="email-contacto">Email Contacto: </label><input type="email" id="email-contacto" name="email-contacto" placeholder="Ingrese email del contacto" class="inputs-form">
         </div>
         <div class="alinear-divs-form">
             <label for="foto-contacto">Fotografía: </label><div class="input-file-div"><input type="file" id="foto-contacto" name="foto-contacto" class="input-file-examine form-control" value="Examinar"></div>
